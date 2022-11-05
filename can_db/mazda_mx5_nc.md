@@ -111,7 +111,7 @@ Channel name | Equation | Notes
 ------------ | -------- | -----
 Engine RPM | `bytestouint(raw,0,2)/4.00` | 
 Speed | `((bytestoint(raw,4,2)/100.00)-100)/3.6` | Raw speed data is given in km/h with a 100 km/h offset. The "3.6" at the end of the equation is needed to switch to m/s that is the unit used internally for calculation by RaceChrono. In the calculation RaceChrono will then multiply automatically for the correct value to transform the m/s to your choice of units (i.e. km/h or mph).
-Accelerator Position | `bytestoint(raw,6,1)*2.00` | This is a percentage, increments of 0.5%
+Accelerator Position | `bytestoint(raw,6,1)/2.00` | This is a percentage, increments of 0.5%
 
 ## CAN ID 0x215
 
